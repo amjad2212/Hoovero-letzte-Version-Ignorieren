@@ -1,0 +1,24 @@
+{
+  "manifest_version": 2,
+  "name": "Hoovero2",
+  "description": "hoover to ignore redact",
+  "version": "1.0",
+  "permissions": ["tabs", "*://*.naix.ai/*"],
+  "content_scripts": [{
+    "run_at": "document_end",
+    "matches": ["*://*.naix.ai/*"],
+    "js": ["js/script.js"]
+  }],
+  "browser_action": {
+    "default_title": "HooverOnClick,shortcut: ctrl+c"
+  },
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
+  "background": {
+    "persistent": true,
+    "scripts": ["js/global.js", "js/background.js"]
+  }
+}
